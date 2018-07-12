@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import HealthKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -28,6 +29,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +40,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         // Run the view's session
         sceneView.session.run(configuration)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let alert = UIAlertController(title: "Hackathon-HUD Needs Permission To Access HealthKit", message: "Would you like to authorize Hackathon-HUD to access you HealthKit data", preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.authorizeHealthKit()
+            })
+        )
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        present(alert, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,5 +92,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+
+    /* HealthKit Stuff */
+
+    private func authorizeHealthKit() {
+        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+            guard authorized else {
+                let baseMessage = "HealthKit Authorization Failed"
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                return
+            }
+
+            print("HealthKit Successfully Authorized.")
+        }
     }
 }
