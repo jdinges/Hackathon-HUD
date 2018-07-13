@@ -44,7 +44,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         let alert = UIAlertController(title: "Hackathon-HUD Needs Permission To Access HealthKit", message: "Would you like to authorize Hackathon-HUD to access you HealthKit data", preferredStyle: .alert)
         alert.addAction(
             UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -97,7 +97,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     /* HealthKit Stuff */
 
     private func authorizeHealthKit() {
-        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+        HealthKitManager.shared.authorizeHealthKit { (authorized, error) in
             guard authorized else {
                 let baseMessage = "HealthKit Authorization Failed"
                 if let error = error {

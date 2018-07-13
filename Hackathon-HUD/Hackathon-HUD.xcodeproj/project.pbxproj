@@ -16,7 +16,8 @@
 		A7DBB83C20F6A298004ED4BD /* Hackathon_HUDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBB83B20F6A298004ED4BD /* Hackathon_HUDTests.swift */; };
 		A7DBB84720F6A298004ED4BD /* Hackathon_HUDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBB84620F6A298004ED4BD /* Hackathon_HUDUITests.swift */; };
 		A7DBB85720F6A4DB004ED4BD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7DBB85620F6A4DB004ED4BD /* HealthKit.framework */; };
-		A7DBB85920F6AE30004ED4BD /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBB85820F6AE30004ED4BD /* HealthKitSetupAssistant.swift */; };
+		A7DBB85D20F7FC4F004ED4BD /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBB85C20F7FC4F004ED4BD /* ProfileDataStore.swift */; };
+		A7DBB85F20F91B69004ED4BD /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBB85E20F91B69004ED4BD /* HealthKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +54,8 @@
 		A7DBB84820F6A298004ED4BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7DBB85420F6A4DB004ED4BD /* Hackathon-HUD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hackathon-HUD.entitlements"; sourceTree = "<group>"; };
 		A7DBB85620F6A4DB004ED4BD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		A7DBB85820F6AE30004ED4BD /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		A7DBB85C20F7FC4F004ED4BD /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		A7DBB85E20F91B69004ED4BD /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,8 @@
 				A7DBB82D20F6A297004ED4BD /* Assets.xcassets */,
 				A7DBB82F20F6A297004ED4BD /* LaunchScreen.storyboard */,
 				A7DBB83220F6A297004ED4BD /* Info.plist */,
-				A7DBB85820F6AE30004ED4BD /* HealthKitSetupAssistant.swift */,
+				A7DBB85C20F7FC4F004ED4BD /* ProfileDataStore.swift */,
+				A7DBB85E20F91B69004ED4BD /* HealthKitManager.swift */,
 			);
 			path = "Hackathon-HUD";
 			sourceTree = "<group>";
@@ -282,8 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7DBB85920F6AE30004ED4BD /* HealthKitSetupAssistant.swift in Sources */,
+				A7DBB85D20F7FC4F004ED4BD /* ProfileDataStore.swift in Sources */,
 				A7DBB82920F6A296004ED4BD /* ViewController.swift in Sources */,
+				A7DBB85F20F91B69004ED4BD /* HealthKitManager.swift in Sources */,
 				A7DBB82520F6A296004ED4BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
